@@ -3,6 +3,7 @@
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
 .idea
+.vscode
 .utmp/
 /[Ll]ibrary/
 /[Tt]emp/
@@ -99,7 +100,7 @@ InitTestScene*.unity*
 # Auto-generated scenes by play mode tests
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
 
-My project/Library
-My project/Logs
-My project/Temp
-My project/UserSettings
+FPS_Zombie/Library
+FPS_Zombie/Logs
+MPS_Zombie/Temp
+FPS_Zombie/UserSettings
