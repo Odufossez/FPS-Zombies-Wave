@@ -1,13 +1,9 @@
 using UnityEngine;
 
-public class Zombie_script : MonoBehaviour
+public class Gun : MonoBehaviour
 {
-
-    public float speed = 1;
-
-    public float life = 100;
-    
-    public float damage = 10;
+    public int magazine_capacity;
+    public int magazine_;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -16,11 +12,6 @@ public class Zombie_script : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        
-    }
-
-    private void OnCollisionEnter(Collision collision)
     {
         
     }

@@ -10,18 +10,47 @@ public class Player : MonoBehaviour
     public float sprintSpeed = 10;
     public float jumpForce = 5f;
     public Boolean canJump = false;
+
+
+
+    // TEST
+    public float acceleration = 10f;
+    public float deceleration = 8f;
+    private Vector3 currentVelocity = Vector3.zero;
+    private Rigidbody rb;
+
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Cursor.lockState = CursorLockMode.Locked;
 
-        if (Input.GetKey(KeyCode.LeftShift))
+        Cursor.lockState = CursorLockMode.Locked;
+
+        float targetSpeed = Input.GetKey(KeyCode.LeftShift) ? sprintSpeed : baseSpeed;
+        Vector3 inputDir = new Vector3(
+            Input.GetAxisRaw("Horizontal"),
+            0,
+            Input.GetAxisRaw("Vertical")
+        ).normalized;
+
+        Vector3 targetVelocity = transform.TransformDirection(inputDir) * targetSpeed;
+
+
+
+        currentVelocity = Vector3.MoveTowards(currentVelocity, targetVelocity, 
+            (targetVelocity.magnitude > currentVelocity.magnitude ? acceleration : deceleration) * Time.deltaTime);
+
+        rb.linearVelocity = new Vector3(currentVelocity.x, rb.linearVelocity.y, currentVelocity.z);
+
+
+
+       /*  if (Input.GetKey(KeyCode.LeftShift))
         {
             speed=sprintSpeed;
         }
@@ -44,7 +73,17 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.D))  // quand on reste appuie
         {
             transform.Translate(speed * Time.deltaTime, 0, 0); //on déplace a gauche
+        } */
+        
+        
+        //Vector3 targetVelocity = transform.TransformDirection(inputDir) * targetSpeed;
+
+        if (Input.GetKey(KeyCode.W))  // avancer en avant
+        {
+            //GetComponent<Rigidbody>().linearVelocity = Vector3.forward*speed;
+            transform.Translate(0, 0, speed * Time.deltaTime ); //on déplace a gauche
         }
+
         /*
         if (Input.GetKey(KeyCode.Q))  
         {
