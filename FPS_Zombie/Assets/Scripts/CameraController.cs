@@ -19,7 +19,7 @@ public class CameraController : MonoBehaviour
 
         rotationY = Math.Clamp(rotationY, -80f, 80f);
 
-        transform.eulerAngles = new Vector3(rotationY,0,0);
+        transform.localEulerAngles = new Vector3(rotationY,0,0);
         // //transform.Rotate(-rotationSpeed * Input.GetAxis("Mouse Y"),0 , 0);
 
         // if(transform.rotation.eulerAngles.x > 81)
