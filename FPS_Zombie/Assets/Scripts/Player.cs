@@ -1,15 +1,21 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField]
     private float rotationSpeed = 2f;
     public float speed = 2;
+    //public float _speed = 2;
 
     public float baseSpeed = 2;
     public float sprintSpeed = 10;
     public float jumpForce = 5f;
     public Boolean canJump = false;
+    private PlayerInputController _playerInput;
+    private Rigidbody _rigidbody;
+
 
 
 
@@ -19,7 +25,13 @@ public class Player : MonoBehaviour
     private Vector3 currentVelocity = Vector3.zero;
     private Rigidbody rb;
 
-    
+    private void Awake()
+    {
+        _playerInput = GetComponent<PlayerInputController>();
+        _rigidbody = GetComponent<Rigidbody>();
+    }
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -32,21 +44,27 @@ public class Player : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
 
-        float targetSpeed = Input.GetKey(KeyCode.LeftShift) ? sprintSpeed : baseSpeed;
-        Vector3 inputDir = new Vector3(
-            Input.GetAxisRaw("Horizontal"),
-            0,
-            Input.GetAxisRaw("Vertical")
-        ).normalized;
+        //Vector3 velocity = new Vector3(_playerInput.MovementInputVector.x,0,_playerInput.MovementInputVector.y)* _speed;
 
-        Vector3 targetVelocity = transform.TransformDirection(inputDir) * targetSpeed;
+        // velocity.y = _rigidbody.linearVelocity.y;
+
+        // _rigidbody.linearVelocity = velocity;
+
+        // float targetSpeed = Input.GetKey(KeyCode.LeftShift) ? sprintSpeed : baseSpeed;
+        // Vector3 inputDir = new Vector3(
+        //     Input.GetAxisRaw("Horizontal"),
+        //     0,
+        //     Input.GetAxisRaw("Vertical")
+        // ).normalized;
+
+        // Vector3 targetVelocity = transform.TransformDirection(inputDir) * targetSpeed;
 
 
 
-        currentVelocity = Vector3.MoveTowards(currentVelocity, targetVelocity, 
-            (targetVelocity.magnitude > currentVelocity.magnitude ? acceleration : deceleration) * Time.deltaTime);
+        // currentVelocity = Vector3.MoveTowards(currentVelocity, targetVelocity, 
+        //     (targetVelocity.magnitude > currentVelocity.magnitude ? acceleration : deceleration) * Time.deltaTime);
 
-        rb.linearVelocity = new Vector3(currentVelocity.x, rb.linearVelocity.y, currentVelocity.z);
+        // rb.linearVelocity = new Vector3(currentVelocity.x, rb.linearVelocity.y, currentVelocity.z);
 
 
 
@@ -78,11 +96,11 @@ public class Player : MonoBehaviour
         
         //Vector3 targetVelocity = transform.TransformDirection(inputDir) * targetSpeed;
 
-        if (Input.GetKey(KeyCode.W))  // avancer en avant
-        {
-            //GetComponent<Rigidbody>().linearVelocity = Vector3.forward*speed;
-            transform.Translate(0, 0, speed * Time.deltaTime ); //on déplace a gauche
-        }
+        // if (Input.GetKey(KeyCode.W))  // avancer en avant
+        // {
+        //     //GetComponent<Rigidbody>().linearVelocity = Vector3.forward*speed;
+        //     transform.Translate(0, 0, speed * Time.deltaTime ); //on déplace a gauche
+        // }
 
         /*
         if (Input.GetKey(KeyCode.Q))  
