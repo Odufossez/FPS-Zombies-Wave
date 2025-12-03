@@ -7,12 +7,15 @@ public class PlayerController : MonoBehaviour
     private float rotationSpeed = 2.0f;
     private Rigidbody _rigidbody;
 
+    private float life;
+
     private PlayerInputController _playerInputController;
 
     private void Awake()
     {
         _playerInputController = GetComponent<PlayerInputController>();
         _rigidbody = GetComponent<Rigidbody>();
+        life = 100;
     }
 
     private void FixedUpdate()
@@ -28,5 +31,16 @@ public class PlayerController : MonoBehaviour
         // velocity.y = _rigidbody.linearVelocity.y;
 
         // _rigidbody.linearVelocity = velocity;
+    }
+    
+    public float GetVie()
+    {
+        return life;
+    }
+
+    public void TakeHit(float damage)
+    {
+        Debug.Log("Took a hit !");
+        life = life - damage;
     }
 }

@@ -453,6 +453,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Zombie_basique
       objectReference: {fileID: 0}
+    - target: {fileID: 5466505259340671873, guid: 600f0b9d995d9b163b9bcfa8c8fd1192, type: 3}
+      propertyPath: speed
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 9148268119729078338, guid: 600f0b9d995d9b163b9bcfa8c8fd1192, type: 3}
       propertyPath: m_LocalPosition.x
       value: -12.7134495

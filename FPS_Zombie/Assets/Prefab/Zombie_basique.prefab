@@ -125,6 +125,8 @@ MonoBehaviour:
   speed: 1
   life: 10
   damage: 1
+  target: {fileID: 0}
+  agent: {fileID: 0}
 --- !u!195 &2518844035091157104
 NavMeshAgent:
   m_ObjectHideFlags: 0
