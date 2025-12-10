@@ -139,18 +139,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24f4c6bd8f58bef4cb423749c11a96e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 6
-  groundDrag: 0
-  jumpForce: 0
-  jumpCooldown: 0
-  airMultiplier: 0
-  walkSpeed: 0
-  sprintSpeed: 0
-  jumpKey: 32
-  playerHeight: 0
+  moveSpeed: 7
+  groundDrag: 5
+  playerHeight: 2
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   orientation: {fileID: 6261488504964799260}
 --- !u!1 &4855978064419961968
 GameObject:
@@ -304,7 +298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sensX: 400
   sensY: 400
-  player: {fileID: 0}
+  player: {fileID: 5783327624413857998}
 --- !u!1 &5759556896629719892
 GameObject:
   m_ObjectHideFlags: 0
