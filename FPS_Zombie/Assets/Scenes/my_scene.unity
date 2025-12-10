@@ -119,7 +119,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &330014161
+--- !u!1001 &128401978
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -129,15 +129,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 894254889842488386, guid: ec2cc9c7714775449aef5a07283a3e5c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.23
+      value: -4.95
       objectReference: {fileID: 0}
     - target: {fileID: 894254889842488386, guid: ec2cc9c7714775449aef5a07283a3e5c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 17.01
+      value: 17.82
       objectReference: {fileID: 0}
     - target: {fileID: 894254889842488386, guid: ec2cc9c7714775449aef5a07283a3e5c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.38
+      value: -3.12
       objectReference: {fileID: 0}
     - target: {fileID: 894254889842488386, guid: ec2cc9c7714775449aef5a07283a3e5c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -170,6 +170,14 @@ PrefabInstance:
     - target: {fileID: 2466927844373035144, guid: ec2cc9c7714775449aef5a07283a3e5c, type: 3}
       propertyPath: m_Name
       value: Player_nobody
+      objectReference: {fileID: 0}
+    - target: {fileID: 4094142489963926727, guid: ec2cc9c7714775449aef5a07283a3e5c, type: 3}
+      propertyPath: jumpForce
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4094142489963926727, guid: ec2cc9c7714775449aef5a07283a3e5c, type: 3}
+      propertyPath: airMultiplier
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -613,4 +621,4 @@ SceneRoots:
   - {fileID: 851246155}
   - {fileID: 1829701497}
   - {fileID: 1953913179}
-  - {fileID: 330014161}
+  - {fileID: 128401978}
