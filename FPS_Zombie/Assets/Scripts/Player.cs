@@ -132,7 +132,7 @@ public class Player : MonoBehaviour
 
 
         //cam
-        transform.Rotate(0, rotationSpeed*Input.GetAxis("Mouse X"), 0);
+        // transform.Rotate(0, rotationSpeed*Input.GetAxis("Mouse X"), 0);
         
     }
 

@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
         Vector3 positionChange = new Vector3(_playerInputController.MovementInputVector.x , 0 , _playerInputController.MovementInputVector.y) * Time.deltaTime * _speed;
         // Vector3 positionChange = new Vector3(_playerInputController.MovementInputVector.x , 0 , _playerInputController.MovementInputVector.y) * Time.deltaTime;
         transform.Translate (positionChange);
-        transform.Rotate(0, rotationSpeed*Input.GetAxis("Mouse X"), 0);
+        // transform.Rotate(0, rotationSpeed*Input.GetAxis("Mouse X"), 0);
         
 
         // Vector3 velocity = new Vector3(_playerInputController.MovementInputVector.x,0,_playerInputController.MovementInputVector.y)* _speed;
