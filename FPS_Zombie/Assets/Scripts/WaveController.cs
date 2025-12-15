@@ -43,8 +43,8 @@ public class WaveController : MonoBehaviour
             }
         } else if(_nbZombieInScene==0) {  // on passe à la vague suivante
             _waveNumber+=1;
-            if(_spawnCooldown>1f){
-                _spawnCooldown=_spawnCooldown*0.8f;
+            if(_spawnCooldown>0.1f){
+                _spawnCooldown=_spawnCooldown*0.75f;
             }
             _zombieSpawnedThisRound=0;
             _zombieNumber=_zombieNumber*2;
