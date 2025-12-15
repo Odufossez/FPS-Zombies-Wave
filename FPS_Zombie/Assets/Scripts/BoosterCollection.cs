@@ -6,23 +6,19 @@ public class BoosterCollection : MonoBehaviour
     public SpeedBooster speedBooster;
 	public NukeBooster nukeBooster;
 
-    private void Start()
+    public void onBoosterCollected(String tagBooster)
     {
+        Debug.Log("Booster collected : " + tagBooster);
         
-    }
-    
-    private void OnTriggerEnter(Collider other)
-    {
-        Debug.Log("Trigger Enter : " + other.transform.tag);
-        Destroy(other.gameObject);
-        switch (other.transform.tag)
+        switch (tagBooster)
         {
             case "SpeedBooster":
+                Debug.Log("Booster speed collected");
                 speedBooster.StartSpeeding();
                 break;
             case "Nuke Booster":
                 Debug.Log("Booster Nuke collected");
-               	nukeBooster.OnCollected();
+                nukeBooster.OnCollected();
                 break;
             default:
                 Debug.Log("No booster");

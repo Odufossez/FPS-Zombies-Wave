@@ -315,6 +315,8 @@ GameObject:
   - component: {fileID: 8233559069476690406}
   - component: {fileID: 7645288514212250502}
   - component: {fileID: 5154076969070149901}
+  - component: {fileID: 3381618461945269074}
+  - component: {fileID: 6403473601397835955}
   m_Layer: 0
   m_Name: PlayerObj
   m_TagString: Player
@@ -413,6 +415,33 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3381618461945269074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5759556896629719892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9432147271732d0cbb1ccd5dde24c07a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedBooster: {fileID: 0}
+  nukeBooster: {fileID: 0}
+--- !u!114 &6403473601397835955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5759556896629719892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38dfe75dc07e1c0458e91ec582e4e99f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 3
 --- !u!1 &5922220778592827029
 GameObject:
   m_ObjectHideFlags: 0
