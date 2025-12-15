@@ -10,24 +10,27 @@ public class BoosterCollection : MonoBehaviour
     {
         nukeBooster = GetComponent<NukeBooster>();
         speedBooster = GetComponent<SpeedBooster>();
-
-        if (nukeBooster == null)
-        {
-            Debug.Log("Nuke Booster component not found on " + gameObject.name);
-        }
     }
 
 
     public void OnBoosterCollected(String tagBooster)
     {
-        Debug.Log(" ONBOOSTERCOLLECTED - Booster collected : " + tagBooster);
-        
         switch (tagBooster)
         {
-            case "SpeedBooster":
-                                
+            case "Speed Booster":
+            {
+                if(speedBooster != null){
+                    speedBooster.OnCollected();
+                }
+                else
+                {
+                    Debug.Log("Speed Booster is null");
+                }
+
                 break;
-            case "Nuke Booster":                
+            }
+            case "Nuke Booster":
+            {
                 if (nukeBooster != null)
                 {
                     nukeBooster.OnCollected();  
@@ -37,6 +40,8 @@ public class BoosterCollection : MonoBehaviour
                 }
                               
                 break;
+            }               
+                
             default:
                 Debug.Log("No booster");
                 break;

@@ -2,32 +2,41 @@ using UnityEngine;
 
 public class SpeedBooster : MonoBehaviour
 {
-    private Player ply;
-    private float initialSpeed;
-    private float boostSpeed = 2;
-    private float boostTime = 5;
-    private float boostTimer;
-    private bool isBoosting=false;
+    public PlayerMovement playerMovement;
+    private float _initialSpeed;
+    private readonly float _boostSpeed = 2f;
+    private readonly float _boostTime = 5f;
+    private float _boostTimer;
+    private bool _isBoosting;
     
     
-    public void StartSpeeding()
+    public void OnCollected()
     {
-        initialSpeed = ply.speed;
-        ply.speed = boostSpeed*initialSpeed;
-        isBoosting = true;
-        boostTimer = 0;
+        Debug.Log("Speed Booster Activated on " + gameObject.name);
+        playerMovement = gameObject.GetComponentInParent<PlayerMovement>();
+        if (playerMovement == null)
+        {
+            Debug.Log("PlayerMovement script not found");
+        }
+        _initialSpeed = playerMovement.moveSpeed;
+        Debug.Log("Initial Speed: " + _initialSpeed);
+        playerMovement.moveSpeed = _boostSpeed*_initialSpeed;
+        Debug.Log("Boost Speed: " + playerMovement.moveSpeed);
+        _isBoosting = true;
+        _boostTimer = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(isBoosting){
-            boostTimer += Time.deltaTime;
+        if(_isBoosting){
+            _boostTimer += Time.deltaTime;
         }
         
-        if (isBoosting && boostTimer >= boostTime){
-        ply.speed = initialSpeed;
-        isBoosting = false;
+        if (_isBoosting && _boostTimer >= _boostTime){
+            playerMovement.moveSpeed = _initialSpeed;
+            _isBoosting = false;
+            _boostTimer = 0;
         }
     }
 }

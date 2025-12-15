@@ -7,6 +7,7 @@ TagManager:
   - Zombie
   - Ground
   - Nuke Booster
+  - Speed Booster
   layers:
   - Default
   - TransparentFX

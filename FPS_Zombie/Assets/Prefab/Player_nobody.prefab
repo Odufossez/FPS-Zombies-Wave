@@ -435,6 +435,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nukeBooster: {fileID: 0}
+  speedBooster: {fileID: 0}
 --- !u!114 &6403473601397835955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -472,6 +473,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 802ab5d252177e3cdbe5f2d41550873e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerMovement: {fileID: 4094142489963926727}
 --- !u!1 &5922220778592827029
 GameObject:
   m_ObjectHideFlags: 0
@@ -656,6 +658,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 0
   BulletRange: 0
+  PlayerCamera: {fileID: 0}
 --- !u!1 &8686295176109613638
 GameObject:
   m_ObjectHideFlags: 0
