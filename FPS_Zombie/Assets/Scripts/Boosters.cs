@@ -9,8 +9,11 @@ public class Boosters : MonoBehaviour
 
         if (bc != null)
         {
-            bc.onBoosterCollected(gameObject.tag); //passe le tag du booster au script de la collection
+            string boosterTag = gameObject.tag;
             Destroy(gameObject);
+            bc.OnBoosterCollected(boosterTag); //passe le tag du booster au script de la collection
+        } else {
+            Debug.Log("BoosterCollection not found");
         }
     }
 }
