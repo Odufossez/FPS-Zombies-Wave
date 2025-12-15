@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!224 &32500746 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5525309443896066876, guid: ec2cc9c7714775449aef5a07283a3e5c, type: 3}
+  m_PrefabInstance: {fileID: 1553120188}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &576509541 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1631467205488026818, guid: e92afd2e06fea2049a15e39340e27087, type: 3}
@@ -447,6 +452,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_nobody
       objectReference: {fileID: 0}
+    - target: {fileID: 8175581108554538383, guid: ec2cc9c7714775449aef5a07283a3e5c, type: 3}
+      propertyPath: Damage
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8175581108554538383, guid: ec2cc9c7714775449aef5a07283a3e5c, type: 3}
+      propertyPath: BulletRange
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 8175581108554538383, guid: ec2cc9c7714775449aef5a07283a3e5c, type: 3}
+      propertyPath: PlayerCamera
+      value: 
+      objectReference: {fileID: 32500746}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -6,10 +6,10 @@ public class DamageGun : MonoBehaviour
 {
     public float Damage;
     public float BulletRange;
-    private Transform PlayerCamera;
+    public Transform PlayerCamera;
     void Start()
     {
-        PlayerCamera = Camera.main.transform;
+        // PlayerCamera = Camera.main.transform;
     }
 
     // Update is called once per frame

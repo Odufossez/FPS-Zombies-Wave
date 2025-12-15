@@ -27,7 +27,7 @@ public class Zombie_script : MonoBehaviour
     {
         agent.destination = target.transform.position;
         count = Time.time;
-
+        Debug.Log(life);
         if (life <= 0f)
         {
             Destroy(gameObject);
