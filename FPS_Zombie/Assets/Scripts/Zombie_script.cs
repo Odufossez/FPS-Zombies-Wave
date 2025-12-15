@@ -27,6 +27,11 @@ public class Zombie_script : MonoBehaviour
     {
         agent.destination = target.transform.position;
         count = Time.time;
+
+        if (life <= 0f)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
