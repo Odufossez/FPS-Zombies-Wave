@@ -44,11 +44,11 @@ public class PlayerController : MonoBehaviour
         life = life - damage;
         if (life <= 0)
         {
-            isDead();
+            IsDead();
         }
     }
 
-    public void isDead()
+    public void IsDead()
     {
         Debug.Log("You are dead !");
     }
