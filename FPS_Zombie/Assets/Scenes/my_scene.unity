@@ -448,6 +448,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2463949052005238071, guid: ec2cc9c7714775449aef5a07283a3e5c, type: 3}
+      propertyPath: OnGunShoot.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2463949052005238071, guid: ec2cc9c7714775449aef5a07283a3e5c, type: 3}
+      propertyPath: OnGunShoot.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Shoot
+      objectReference: {fileID: 0}
+    - target: {fileID: 2463949052005238071, guid: ec2cc9c7714775449aef5a07283a3e5c, type: 3}
+      propertyPath: OnGunShoot.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DamageGun, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2463949052005238071, guid: ec2cc9c7714775449aef5a07283a3e5c, type: 3}
+      propertyPath: OnGunShoot.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2466927844373035144, guid: ec2cc9c7714775449aef5a07283a3e5c, type: 3}
       propertyPath: m_Name
       value: Player_nobody
@@ -458,12 +474,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8175581108554538383, guid: ec2cc9c7714775449aef5a07283a3e5c, type: 3}
       propertyPath: BulletRange
-      value: 500
+      value: 50000
       objectReference: {fileID: 0}
     - target: {fileID: 8175581108554538383, guid: ec2cc9c7714775449aef5a07283a3e5c, type: 3}
       propertyPath: PlayerCamera
       value: 
       objectReference: {fileID: 32500746}
+    - target: {fileID: 8934017315255585017, guid: ec2cc9c7714775449aef5a07283a3e5c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

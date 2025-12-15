@@ -13,7 +13,7 @@ public class DamageGun : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void Shoot()
     {
         Ray gunRay = new Ray(PlayerCamera.position, PlayerCamera.forward);
         if (Physics.Raycast(gunRay, out RaycastHit hitInfo, BulletRange))
