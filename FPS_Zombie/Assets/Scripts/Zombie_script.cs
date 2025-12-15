@@ -26,7 +26,7 @@ public class Zombie_script : MonoBehaviour
     void Update()
     {
         agent.destination = target.transform.position;
-        count = Time.time;
+        count += Time.deltaTime;
         // Debug.Log(life);
         if (life <= 0f)
         {
@@ -38,7 +38,6 @@ public class Zombie_script : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player" && count >= 1.5f)
         {
-            Debug.Log("On collision Enter");
             count = 0;
             _playerController.TakeHit(damage);
         }
@@ -48,7 +47,6 @@ public class Zombie_script : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player" && count >= 1.5f)
         {
-            Debug.Log("On collision Stay");
             count = 0;
             _playerController.TakeHit(damage);
         }

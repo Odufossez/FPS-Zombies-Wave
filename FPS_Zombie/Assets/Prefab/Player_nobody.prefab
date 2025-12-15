@@ -75,6 +75,7 @@ GameObject:
   - component: {fileID: 5783327624413857998}
   - component: {fileID: 4007489840150581456}
   - component: {fileID: 4094142489963926727}
+  - component: {fileID: 3623663821189906342}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -151,6 +152,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   orientation: {fileID: 6261488504964799260}
+--- !u!114 &3623663821189906342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2865879942559503152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77959c91323cd654ab346bd2d45de3bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zombiesKilledText: {fileID: 0}
 --- !u!1 &4855978064419961968
 GameObject:
   m_ObjectHideFlags: 0
@@ -449,6 +463,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 3
+  zombiesKilled: 0
+  gameOverScript: {fileID: 3623663821189906342}
 --- !u!114 &8433725553499024145
 MonoBehaviour:
   m_ObjectHideFlags: 0

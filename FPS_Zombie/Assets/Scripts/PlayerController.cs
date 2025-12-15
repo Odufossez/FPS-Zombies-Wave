@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -6,6 +7,9 @@ public class PlayerController : MonoBehaviour
     private float _speed = 3.0f;
     private float rotationSpeed = 2.0f;
     private Rigidbody _rigidbody;
+    public int zombiesKilled;
+    
+    public GameOverScript gameOverScript;
 
     private float life;
 
@@ -13,9 +17,11 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+        gameOverScript = gameObject.GetComponentInParent<GameOverScript>();
         _playerInputController = GetComponent<PlayerInputController>();
         _rigidbody = GetComponent<Rigidbody>();
-        life = 100;
+        life = 3;
+        zombiesKilled = 0;
     }
 
     private void FixedUpdate()
@@ -40,7 +46,6 @@ public class PlayerController : MonoBehaviour
 
     public void TakeHit(float damage)
     {
-        Debug.Log("Took a hit !");
         life = life - damage;
         if (life <= 0)
         {
@@ -51,5 +56,10 @@ public class PlayerController : MonoBehaviour
     public void IsDead()
     {
         Debug.Log("You are dead !");
+        if (gameOverScript != null)
+        {
+            Debug.Log("GameOverScript is not null");
+        }
+        gameOverScript.Setup(zombiesKilled);
     }
 }

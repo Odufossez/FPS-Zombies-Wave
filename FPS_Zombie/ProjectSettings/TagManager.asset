@@ -8,6 +8,7 @@ TagManager:
   - Ground
   - Nuke Booster
   - Speed Booster
+  - GameOver
   layers:
   - Default
   - TransparentFX
