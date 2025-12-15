@@ -42,5 +42,14 @@ public class PlayerController : MonoBehaviour
     {
         Debug.Log("Took a hit !");
         life = life - damage;
+        if (life <= 0)
+        {
+            isDead();
+        }
+    }
+
+    public void isDead()
+    {
+        Debug.Log("You are dead !");
     }
 }
