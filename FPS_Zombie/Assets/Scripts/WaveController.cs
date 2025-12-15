@@ -29,6 +29,7 @@ public class WaveController : MonoBehaviour
 
     void Update()
     {
+        // Debug.Log(_nbZombieInScene);
         waveText.text = "Manche : " + _waveNumber;
         _nbZombieInScene = GetZombieCountInScene();
         if (_zombieSpawnedThisRound < _zombieNumber)
@@ -40,7 +41,7 @@ public class WaveController : MonoBehaviour
                 _zombieSpawnedThisRound++;
                 _spawnTimer = _spawnCooldown;
             }
-        } else if(_nbZombieInScene==_zombieNumber) {  // on passe à la vague suivante
+        } else if(_nbZombieInScene==0) {  // on passe à la vague suivante
             _waveNumber+=1;
             if(_spawnCooldown>1f){
                 _spawnCooldown=_spawnCooldown*0.8f;

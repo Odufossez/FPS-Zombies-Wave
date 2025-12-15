@@ -22,7 +22,7 @@ public class Gun : MonoBehaviour
         {
             if (Input.GetMouseButton(0))
             {
-                Debug.Log("coucou");
+                // Debug.Log("coucou");
                 if (CurrentCooldown <= 0f)
                 {
                     OnGunShoot?.Invoke();
