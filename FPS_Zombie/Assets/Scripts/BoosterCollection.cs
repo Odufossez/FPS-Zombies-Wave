@@ -4,6 +4,12 @@ using UnityEngine;
 public class BoosterCollection : MonoBehaviour
 {
     public SpeedBooster speedBooster;
+	public NukeBooster nukeBooster;
+
+    private void Start()
+    {
+        
+    }
     
     private void OnTriggerEnter(Collider other)
     {
@@ -14,8 +20,9 @@ public class BoosterCollection : MonoBehaviour
             case "SpeedBooster":
                 speedBooster.StartSpeeding();
                 break;
-            case "ShieldBooster":
-                Debug.Log("Shield Booster");
+            case "Nuke Booster":
+                Debug.Log("Booster Nuke collected");
+               	nukeBooster.OnCollected();
                 break;
             default:
                 Debug.Log("No booster");
