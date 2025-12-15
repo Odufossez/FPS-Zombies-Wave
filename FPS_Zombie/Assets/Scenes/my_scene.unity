@@ -995,6 +995,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8235143130000796586, guid: e92afd2e06fea2049a15e39340e27087, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8235143130000796586, guid: e92afd2e06fea2049a15e39340e27087, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8235143130000796586, guid: e92afd2e06fea2049a15e39340e27087, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8235143130000796586, guid: e92afd2e06fea2049a15e39340e27087, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8235143130000796586, guid: e92afd2e06fea2049a15e39340e27087, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 132
+      objectReference: {fileID: 0}
+    - target: {fileID: 8235143130000796586, guid: e92afd2e06fea2049a15e39340e27087, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 70
+      objectReference: {fileID: 0}
     - target: {fileID: 8441984800133365423, guid: e92afd2e06fea2049a15e39340e27087, type: 3}
       propertyPath: m_Name
       value: Canvas
