@@ -3,19 +3,39 @@ using UnityEngine;
 
 public class BoosterCollection : MonoBehaviour
 {
+    public NukeBooster nukeBooster;
     public SpeedBooster speedBooster;
-    
-    private void OnTriggerEnter(Collider other)
+
+    public void Start()
     {
-        Debug.Log("Trigger Enter : " + other.transform.tag);
-        Destroy(other.gameObject);
-        switch (other.transform.tag)
+        nukeBooster = GetComponent<NukeBooster>();
+        speedBooster = GetComponent<SpeedBooster>();
+
+        if (nukeBooster == null)
+        {
+            Debug.Log("Nuke Booster component not found on " + gameObject.name);
+        }
+    }
+
+
+    public void OnBoosterCollected(String tagBooster)
+    {
+        Debug.Log(" ONBOOSTERCOLLECTED - Booster collected : " + tagBooster);
+        
+        switch (tagBooster)
         {
             case "SpeedBooster":
-                speedBooster.StartSpeeding();
+                                
                 break;
-            case "ShieldBooster":
-                Debug.Log("Shield Booster");
+            case "Nuke Booster":                
+                if (nukeBooster != null)
+                {
+                    nukeBooster.OnCollected();  
+                } else
+                {
+                    Debug.Log("Nuke Booster is null");
+                }
+                              
                 break;
             default:
                 Debug.Log("No booster");

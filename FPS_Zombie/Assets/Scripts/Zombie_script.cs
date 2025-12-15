@@ -17,6 +17,7 @@ public class Zombie_script : MonoBehaviour
     {
         count = 0;
         _playerController = GameObject.FindFirstObjectByType(typeof(PlayerController)) as PlayerController;
+        if(_playerController == null) Debug.LogError("PlayerController not found");
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         target = GameObject.FindGameObjectWithTag("Player");
     }
