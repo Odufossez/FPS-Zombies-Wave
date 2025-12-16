@@ -10,6 +10,7 @@ public class DamageGun : MonoBehaviour
     void Start()
     {
         // PlayerCamera = Camera.main.transform;
+        Damage=100;
     }
 
     // Update is called once per frame
