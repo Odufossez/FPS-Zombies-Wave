@@ -30,6 +30,7 @@ public class Zombie_script : MonoBehaviour
         // Debug.Log(life);
         if (life <= 0f)
         {
+            _playerController.zombiesKilled++;
             Destroy(gameObject);
         }
     }

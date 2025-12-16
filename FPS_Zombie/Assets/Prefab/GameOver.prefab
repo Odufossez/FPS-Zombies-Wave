@@ -329,7 +329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77959c91323cd654ab346bd2d45de3bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zombiesKilledText: {fileID: 0}
+  zombiesKilledText: {fileID: 4976118719125235340}
 --- !u!1 &5809366908639949825
 GameObject:
   m_ObjectHideFlags: 0
@@ -531,7 +531,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Zombies killed 5
+  m_text: scoretext
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

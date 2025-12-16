@@ -6,10 +6,16 @@ using UnityEngine.UI;
 
 public class GameOverScript : MonoBehaviour
 {
-    [SerializeField] public TextMeshPro zombiesKilledText;
+    [SerializeField] public TextMeshProUGUI zombiesKilledText;
     
     public void Setup(int zombiesKilled)
     {
+        Debug.Log("Setting up Game Over Screen");
+        zombiesKilledText = GameObject.Find("ZombiesKilledText").GetComponent<TextMeshProUGUI>();
+        if (zombiesKilledText == null)
+        {
+            Debug.Log("Text Mesh Pro not found ");
+        }
         zombiesKilledText.text = "Zombies Killed: " + zombiesKilled;
     }
 

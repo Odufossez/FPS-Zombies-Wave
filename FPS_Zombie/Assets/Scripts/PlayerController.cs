@@ -60,5 +60,7 @@ public class PlayerController : MonoBehaviour
         gameOverPanel.SetActive(true);
         Time.timeScale = 0;
         Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        gameOverScript.Setup(zombiesKilled);
     }
 }
