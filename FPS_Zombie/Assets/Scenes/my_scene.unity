@@ -2531,6 +2531,14 @@ PrefabInstance:
       propertyPath: gun
       value: 
       objectReference: {fileID: 131895046}
+    - target: {fileID: 1331716903325859377, guid: 55aefebb545d6764287917e61c118d33, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 507
+      objectReference: {fileID: 0}
+    - target: {fileID: 2086874261851193082, guid: 55aefebb545d6764287917e61c118d33, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 541
+      objectReference: {fileID: 0}
     - target: {fileID: 3799954655531013211, guid: 55aefebb545d6764287917e61c118d33, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2615,6 +2623,10 @@ PrefabInstance:
       propertyPath: playerController
       value: 
       objectReference: {fileID: 910740146}
+    - target: {fileID: 7402198108085621191, guid: 55aefebb545d6764287917e61c118d33, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 488
+      objectReference: {fileID: 0}
     - target: {fileID: 7824134748079609312, guid: 55aefebb545d6764287917e61c118d33, type: 3}
       propertyPath: m_Name
       value: Canvas 1

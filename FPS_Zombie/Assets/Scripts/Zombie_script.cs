@@ -10,6 +10,9 @@ public class Zombie_script : MonoBehaviour
     public float damage = 1;
 
     public GameObject target;
+    
+    private AudioSource audioSourceNoot;
+   [SerializeField] private AudioClip clipNoot;
 
     public  UnityEngine.AI.NavMeshAgent agent;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -20,6 +23,7 @@ public class Zombie_script : MonoBehaviour
         if(_playerController == null) Debug.LogError("PlayerController not found");
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         target = GameObject.FindGameObjectWithTag("Player");
+        audioSourceNoot = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -31,6 +35,7 @@ public class Zombie_script : MonoBehaviour
         if (life <= 0f)
         {
             _playerController.zombiesKilled++;
+            AudioSource.PlayClipAtPoint(clipNoot, transform.position);
             Destroy(gameObject);
         }
     }
