@@ -12,7 +12,8 @@ public class PlayerController : MonoBehaviour
     
     public GameOverScript gameOverScript;
 
-    private float life;
+    public float life;
+    public const float maxlife = 100;
 
     private PlayerInputController _playerInputController;
 
@@ -21,8 +22,8 @@ public class PlayerController : MonoBehaviour
         gameOverScript = gameObject.GetComponentInParent<GameOverScript>();
         _playerInputController = GetComponent<PlayerInputController>();
         _rigidbody = GetComponent<Rigidbody>();
-        life = 3;
         zombiesKilled = 0;
+        life = maxlife;
     }
 
     private void FixedUpdate()
@@ -38,11 +39,6 @@ public class PlayerController : MonoBehaviour
         // velocity.y = _rigidbody.linearVelocity.y;
 
         // _rigidbody.linearVelocity = velocity;
-    }
-    
-    public float GetVie()
-    {
-        return life;
     }
 
     public void TakeHit(float damage)

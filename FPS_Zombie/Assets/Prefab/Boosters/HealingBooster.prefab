@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &5711293285412730702
+--- !u!1001 &272765035972328540
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -51,14 +51,14 @@ PrefabInstance:
     - target: {fileID: 5817252094506048922, guid: 2c34135aa5eb3084d9815e0e4f86c3db, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 336f4d6c1014ce7eda5a49a95d26429d, type: 2}
+      objectReference: {fileID: 2100000, guid: 6335aa790c63aea1887fea9d687bcbbf, type: 2}
     - target: {fileID: 5990256554811286020, guid: 2c34135aa5eb3084d9815e0e4f86c3db, type: 3}
       propertyPath: m_Name
-      value: NukeBooster
+      value: HealingBooster
       objectReference: {fileID: 0}
     - target: {fileID: 5990256554811286020, guid: 2c34135aa5eb3084d9815e0e4f86c3db, type: 3}
       propertyPath: m_TagString
-      value: Nuke Booster
+      value: Healing Booster
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -5,11 +5,14 @@ public class BoosterCollection : MonoBehaviour
 {
     public NukeBooster nukeBooster;
     public SpeedBooster speedBooster;
+    
+    public HealingBooster healingBooster;
 
     public void Start()
     {
         nukeBooster = GetComponent<NukeBooster>();
         speedBooster = GetComponent<SpeedBooster>();
+        healingBooster = GetComponent<HealingBooster>();
     }
 
 
@@ -40,7 +43,18 @@ public class BoosterCollection : MonoBehaviour
                 }
                               
                 break;
-            }               
+            }
+            case "Healing Booster":
+            {
+                if (healingBooster != null)
+                {
+                    healingBooster.OnCollected();  
+                } else
+                {
+                    Debug.Log("Healing Booster is null");
+                }
+                break;
+            }
                 
             default:
                 Debug.Log("No booster");

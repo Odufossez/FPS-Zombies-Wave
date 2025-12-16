@@ -338,6 +338,7 @@ GameObject:
   - component: {fileID: 6403473601397835955}
   - component: {fileID: 8433725553499024145}
   - component: {fileID: 3959324987471297949}
+  - component: {fileID: 3775738758464600878}
   m_Layer: 0
   m_Name: PlayerObj
   m_TagString: Player
@@ -448,8 +449,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9432147271732d0cbb1ccd5dde24c07a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nukeBooster: {fileID: 0}
-  speedBooster: {fileID: 0}
+  nukeBooster: {fileID: 8433725553499024145}
+  speedBooster: {fileID: 3959324987471297949}
+  healingBooster: {fileID: 3775738758464600878}
 --- !u!114 &6403473601397835955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -464,7 +466,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 3
   zombiesKilled: 0
+  gameOverPanel: {fileID: 0}
   gameOverScript: {fileID: 3623663821189906342}
+  life: 100
 --- !u!114 &8433725553499024145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -490,6 +494,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 4094142489963926727}
+--- !u!114 &3775738758464600878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5759556896629719892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7587a1931bc4addb1905eb3cccc9c978, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healing: 10
+  playerController: {fileID: 6403473601397835955}
 --- !u!1 &5922220778592827029
 GameObject:
   m_ObjectHideFlags: 0
@@ -660,6 +678,12 @@ MonoBehaviour:
         m_CallState: 2
   FireCooldown: 0.3
   Automatic: 1
+  _bulletLeft: 0
+  _magazineSize: 0
+  _reloadCooldown: 0
+  _reloadTimer: 0
+  bulletTXT: {fileID: 0}
+  _canShoot: 0
 --- !u!114 &8175581108554538383
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -12,7 +12,7 @@ public class SpeedBooster : MonoBehaviour
     
     public void OnCollected()
     {
-        Debug.Log("Speed Booster Activated on " + gameObject.name);
+        //Debug.Log("Speed Booster Activated on " + gameObject.name);
         playerMovement = gameObject.GetComponentInParent<PlayerMovement>();
         if (playerMovement == null)
         {

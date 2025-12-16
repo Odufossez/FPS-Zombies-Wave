@@ -9,6 +9,7 @@ TagManager:
   - Nuke Booster
   - Speed Booster
   - GameOver
+  - Healing Booster
   layers:
   - Default
   - TransparentFX
