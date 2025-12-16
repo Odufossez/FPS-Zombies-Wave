@@ -3,6 +3,7 @@ using UnityEngine;
 public class Zombie_script : MonoBehaviour
 {
     private PlayerController _playerController;
+    private PaP _PaP;
     private float count= 0f;
 
     public float life = 100;
@@ -31,6 +32,7 @@ public class Zombie_script : MonoBehaviour
         if (life <= 0f)
         {
             _playerController.zombiesKilled++;
+            _PaP._moneyAmount +=90;
             Destroy(gameObject);
         }
     }
