@@ -16,8 +16,10 @@ public class NukeBooster : MonoBehaviour
         _audioSource = gameObject.GetComponent<AudioSource>();
         _isCollected = true;
         nbZombie = 0;
-        _audioSource.clip = _clip;
-        _audioSource.Play();
+        if (_audioSource != null && _clip != null)
+        {
+            _audioSource.PlayOneShot(_clip);
+        }
     }
 
     public void Update()

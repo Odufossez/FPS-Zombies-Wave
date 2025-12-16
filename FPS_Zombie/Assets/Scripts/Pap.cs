@@ -25,7 +25,7 @@ public class PaP : MonoBehaviour
             Upgrade();
         }
         _moneyTxt.text = _moneyAmount+" $";
-        _GunLevelTxt.text = _GunLevel+"";
+        _GunLevelTxt.text = "Level du gun : " + _GunLevel;
     }
 
     private void Upgrade()
