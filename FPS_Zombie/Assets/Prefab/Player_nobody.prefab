@@ -481,6 +481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5ebb4181c38c4fd9856b5d4eee9f497, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nbZombie: 0
 --- !u!114 &3959324987471297949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -494,6 +495,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 4094142489963926727}
+  gun: {fileID: 2463949052005238071}
 --- !u!114 &3775738758464600878
 MonoBehaviour:
   m_ObjectHideFlags: 0
