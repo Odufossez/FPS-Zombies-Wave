@@ -10,6 +10,7 @@ TagManager:
   - Speed Booster
   - GameOver
   - Healing Booster
+  - Wall
   layers:
   - Default
   - TransparentFX

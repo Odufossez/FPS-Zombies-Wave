@@ -16,9 +16,9 @@ public class HealingBooster : MonoBehaviour
         
         playerController.life += healing;
         
-        if (playerController.life > PlayerController.maxlife)
+        if (playerController.life > PlayerController.MaxLife)
         {
-            playerController.life = PlayerController.maxlife;
+            playerController.life = PlayerController.MaxLife;
         }
         //Debug.Log("Healing Booster Activated on " + gameObject.name);
     }

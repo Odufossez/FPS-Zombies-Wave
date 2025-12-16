@@ -16,7 +16,7 @@ public class SpeedBooster : MonoBehaviour
     {
         //Debug.Log("Speed Booster Activated on " + gameObject.name);
         playerMovement = gameObject.GetComponentInParent<PlayerMovement>();
-		gun = gameObject.GetComponent<Gun>();
+		//gun = gameObject.GetComponent<Gun>();
         if (playerMovement == null)
         {
             Debug.Log("PlayerMovement script not found");
@@ -29,6 +29,7 @@ public class SpeedBooster : MonoBehaviour
 
         _initialSpeed = playerMovement.moveSpeed;
         _initialReloadSpeed = gun._reloadCooldown;
+        Debug.Log("Initial Reload Speed: " + _initialReloadSpeed);
         //Debug.Log("Initial Speed: " + _initialSpeed);
         playerMovement.moveSpeed = _boostSpeed*_initialSpeed;
         gun._reloadCooldown = _boostSpeed*_initialReloadSpeed;

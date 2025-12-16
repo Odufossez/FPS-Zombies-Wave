@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     public GameOverScript gameOverScript;
 
     public float life;
-    public const float maxlife = 100;
+    public const float MaxLife = 100;
 
     private PlayerInputController _playerInputController;
 
@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
         _playerInputController = GetComponent<PlayerInputController>();
         _rigidbody = GetComponent<Rigidbody>();
         zombiesKilled = 0;
-        life = maxlife;
+        life = MaxLife;
     }
 
     private void FixedUpdate()

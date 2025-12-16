@@ -16,7 +16,7 @@ public class BoosterSpawner : MonoBehaviour
     private void Spawning()
     {
         randomBooster = Random.Range(0, boosters.Length);
-        randomSpawn = new Vector3(Random.Range(-10, 11), 2, Random.Range(-10, 11));
+        randomSpawn = new Vector3(Random.Range(-47, 47), 2, Random.Range(-47, 47));
         Instantiate(boosters[randomBooster], randomSpawn, Quaternion.identity);
     }
 }
