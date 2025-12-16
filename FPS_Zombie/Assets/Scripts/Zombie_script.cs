@@ -6,7 +6,7 @@ public class Zombie_script : MonoBehaviour
     private PaP _PaP;
     private float count= 0f;
 
-    public float life = 100;
+    public float life = 50;
     
     public float damage = 1;
 

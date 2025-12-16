@@ -11,7 +11,7 @@ public class Gun : MonoBehaviour
     public int _magazineSize;
     public float _reloadCooldown;     
     public float _reloadTimer;
-    private float CurrentCooldown;
+    public float CurrentCooldown;
     public TMP_Text bulletTXT;
     public bool _canShoot;
     // public int magazine_capacity;

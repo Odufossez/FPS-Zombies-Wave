@@ -14,6 +14,7 @@ public class PaP : MonoBehaviour
     void Start()
     {
         _moneyAmount = 0;
+        _GunLevel=1;
     }
 
     // Update is called once per frame
@@ -23,6 +24,8 @@ public class PaP : MonoBehaviour
         {
             Upgrade();
         }
+        _moneyTxt.text = _moneyAmount+" $";
+        _GunLevelTxt.text = _GunLevel+"";
     }
 
     private void Upgrade()
@@ -31,6 +34,7 @@ public class PaP : MonoBehaviour
         {
             _DamageGun.Damage=_DamageGun.Damage*2;
             _Gun._magazineSize=_Gun._magazineSize*2;
+            _Gun.CurrentCooldown =_Gun.CurrentCooldown*0.75f;
             _moneyAmount-=1500;
         }
     }
