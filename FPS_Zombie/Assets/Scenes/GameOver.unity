@@ -189,7 +189,7 @@ Camera:
     m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
+  m_TargetDisplay: 1
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
@@ -418,6 +418,30 @@ PrefabInstance:
     - target: {fileID: 6510258917225398481, guid: 1894f2aba101ad94fb7267645dd50e2a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7574221339444174427, guid: 1894f2aba101ad94fb7267645dd50e2a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7574221339444174427, guid: 1894f2aba101ad94fb7267645dd50e2a, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7574221339444174427, guid: 1894f2aba101ad94fb7267645dd50e2a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7574221339444174427, guid: 1894f2aba101ad94fb7267645dd50e2a, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7574221339444174427, guid: 1894f2aba101ad94fb7267645dd50e2a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7574221339444174427, guid: 1894f2aba101ad94fb7267645dd50e2a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9030299936806076124, guid: 1894f2aba101ad94fb7267645dd50e2a, type: 3}
       propertyPath: m_Pivot.x

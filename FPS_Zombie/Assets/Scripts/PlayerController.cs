@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     private float rotationSpeed = 2.0f;
     private Rigidbody _rigidbody;
     public int zombiesKilled;
+    public GameObject gameOverPanel;
     
     public GameOverScript gameOverScript;
 
@@ -56,10 +57,8 @@ public class PlayerController : MonoBehaviour
     public void IsDead()
     {
         Debug.Log("You are dead !");
-        if (gameOverScript != null)
-        {
-            Debug.Log("GameOverScript is not null");
-        }
-        gameOverScript.Setup(zombiesKilled);
+        gameOverPanel.SetActive(true);
+        Time.timeScale = 0;
+        Cursor.lockState = CursorLockMode.None;
     }
 }
