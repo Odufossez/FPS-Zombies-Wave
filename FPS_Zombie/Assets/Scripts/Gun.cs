@@ -9,7 +9,7 @@ public class Gun : MonoBehaviour
     public bool Automatic;
     public int _bulletLeft;
     public int _magazineSize;
-    public float _reloadCooldown;      //  !!!!!!!!!!!!!!   celle-ci à changer
+    public float _reloadCooldown;     
     public float _reloadTimer;
     private float CurrentCooldown;
     public TMP_Text bulletTXT;
