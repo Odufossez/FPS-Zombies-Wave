@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UI;
 
 public class WaveController : MonoBehaviour
@@ -20,6 +21,7 @@ public class WaveController : MonoBehaviour
 
     void Start()
     {
+        _zombieSpeed = 2f;
         _waveNumber = 1;
         _spawnCooldown = 2.5f;
         _zombieNumber = 5;
@@ -37,7 +39,9 @@ public class WaveController : MonoBehaviour
             if (_spawnTimer <= 0f)
             {
                 Vector3 spawnPosition = new Vector3(0, 5, 0);
-                Instantiate(zombiePrefab, spawnPosition, Quaternion.identity);
+                GameObject zombie = Instantiate(zombiePrefab, spawnPosition, Quaternion.identity);
+                NavMeshAgent agent = zombie.GetComponent<NavMeshAgent>();
+                agent.speed = _zombieSpeed;
                 _zombieSpawnedThisRound++;
                 _spawnTimer = _spawnCooldown;
             }
@@ -48,6 +52,7 @@ public class WaveController : MonoBehaviour
             }
             _zombieSpawnedThisRound=0;
             _zombieNumber=_zombieNumber*2;
+            _zombieSpeed = _zombieSpeed*1.25f;
         }
         _spawnTimer -= Time.deltaTime;
     }
