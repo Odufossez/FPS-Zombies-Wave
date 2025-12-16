@@ -12,6 +12,7 @@ public class WaveController : MonoBehaviour
     private float _zombieLife;
     private float _spawnCooldown;
     private int _nbZombieInScene;
+    public Zombie_script _zombie;
     public TMP_Text waveText;
     public TMP_Text bullets;
     public TMP_Text lifeText;
@@ -59,6 +60,8 @@ public class WaveController : MonoBehaviour
             _zombieSpawnedThisRound=0;
             _zombieNumber=_zombieNumber*2;
             _zombieSpeed = _zombieSpeed*1.25f;
+            _zombie.damage=_zombie.damage*2;
+            // _zombie.life=_zombie.life*2;
         }
         _spawnTimer -= Time.deltaTime;
     }
