@@ -32,9 +32,9 @@ public class PaP : MonoBehaviour
     {
         if (_moneyAmount > 1500)
         {
-            _DamageGun.Damage=_DamageGun.Damage*2;
-            _Gun._magazineSize=_Gun._magazineSize*2;
-            _Gun.CurrentCooldown =_Gun.CurrentCooldown*0.75f;
+            _DamageGun.Damage *= 2;
+            _Gun._magazineSize*=2;
+            _Gun.CurrentCooldown *=0.75f;
             _moneyAmount-=1500;
         }
     }
