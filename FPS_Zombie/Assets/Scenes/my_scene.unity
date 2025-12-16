@@ -1551,6 +1551,7 @@ MonoBehaviour:
   boosters:
   - {fileID: 2045545051452478794, guid: 6da2138182756d238b329a73f54c7e55, type: 3}
   - {fileID: 1768662752093801695, guid: 14d3e2d1558334b8abcc2be3d9d73a1e, type: 3}
+  - {fileID: 5830090877921238616, guid: e53a9c3ed8c0b54e089794edc41c94c5, type: 3}
   randomSpawn: {x: 0, y: 0, z: 0}
   randomBooster: 0
 --- !u!1001 &1553120188
@@ -1657,63 +1658,6 @@ PrefabInstance:
       addedObject: {fileID: 1099377860}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec2cc9c7714775449aef5a07283a3e5c, type: 3}
---- !u!1001 &1723462318
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3053243330582432980, guid: e53a9c3ed8c0b54e089794edc41c94c5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -10.333271
-      objectReference: {fileID: 0}
-    - target: {fileID: 3053243330582432980, guid: e53a9c3ed8c0b54e089794edc41c94c5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3053243330582432980, guid: e53a9c3ed8c0b54e089794edc41c94c5, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1.6313684
-      objectReference: {fileID: 0}
-    - target: {fileID: 3053243330582432980, guid: e53a9c3ed8c0b54e089794edc41c94c5, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3053243330582432980, guid: e53a9c3ed8c0b54e089794edc41c94c5, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3053243330582432980, guid: e53a9c3ed8c0b54e089794edc41c94c5, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3053243330582432980, guid: e53a9c3ed8c0b54e089794edc41c94c5, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3053243330582432980, guid: e53a9c3ed8c0b54e089794edc41c94c5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3053243330582432980, guid: e53a9c3ed8c0b54e089794edc41c94c5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3053243330582432980, guid: e53a9c3ed8c0b54e089794edc41c94c5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5830090877921238616, guid: e53a9c3ed8c0b54e089794edc41c94c5, type: 3}
-      propertyPath: m_Name
-      value: HealingBooster
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e53a9c3ed8c0b54e089794edc41c94c5, type: 3}
 --- !u!1 &1799866542
 GameObject:
   m_ObjectHideFlags: 0
@@ -2261,4 +2205,3 @@ SceneRoots:
   - {fileID: 656698466}
   - {fileID: 1367022204}
   - {fileID: 1516419577}
-  - {fileID: 1723462318}
