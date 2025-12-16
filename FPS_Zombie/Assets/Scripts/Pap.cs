@@ -36,6 +36,7 @@ public class PaP : MonoBehaviour
             _Gun._magazineSize*=2;
             _Gun.CurrentCooldown *=0.75f;
             _moneyAmount-=1500;
+            _GunLevel+=1;
         }
     }
 }

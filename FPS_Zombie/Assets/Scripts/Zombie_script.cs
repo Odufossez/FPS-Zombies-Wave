@@ -3,7 +3,7 @@ using UnityEngine;
 public class Zombie_script : MonoBehaviour
 {
     private PlayerController _playerController;
-    private PaP _PaP;
+    public PaP _PaP;
     private float count= 0f;
 
     public float life = 50;
@@ -19,6 +19,7 @@ public class Zombie_script : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        _PaP = GameObject.FindFirstObjectByType<PaP>();
         count = 0;
         _playerController = GameObject.FindFirstObjectByType(typeof(PlayerController)) as PlayerController;
         if(_playerController == null) Debug.LogError("PlayerController not found");

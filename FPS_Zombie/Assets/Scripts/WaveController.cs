@@ -32,6 +32,7 @@ public class WaveController : MonoBehaviour
         _zombieNumber = 5;
         _zombieSpawnedThisRound = 0;
         _spawnTimer = 0f;
+        // _zombie = GameObject.FindFirstObjectByType<Zombie_basique>();
     }
 
     void Update()
@@ -61,7 +62,7 @@ public class WaveController : MonoBehaviour
             _zombieNumber=_zombieNumber*2;
             _zombieSpeed = _zombieSpeed*1.25f;
             _zombie.damage=_zombie.damage*2;
-            // _zombie.life=_zombie.life*2;
+            _zombie.life=_zombie.life*2;
         }
         _spawnTimer -= Time.deltaTime;
     }
