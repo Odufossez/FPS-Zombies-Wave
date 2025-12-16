@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
 
     public void IsDead()
     {
-        Debug.Log("You are dead !");
+        //Debug.Log("You are dead !");
         gameOverPanel.SetActive(true);
         Time.timeScale = 0;
         Cursor.lockState = CursorLockMode.None;
