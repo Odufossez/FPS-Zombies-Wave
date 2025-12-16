@@ -13,9 +13,13 @@ public class WaveController : MonoBehaviour
     private float _spawnCooldown;
     private int _nbZombieInScene;
     public TMP_Text waveText;
+    public TMP_Text bullets;
+    public TMP_Text lifeText;
 
     [Header("Prefab du zombie à instancier")]
     public GameObject zombiePrefab;
+    public PlayerController playerController;
+    public Gun gun;
 
     private float _spawnTimer;
 
@@ -33,6 +37,8 @@ public class WaveController : MonoBehaviour
     {
         // Debug.Log(_nbZombieInScene);
         waveText.text = "Manche : " + _waveNumber;
+        bullets.text = gun._bulletLeft + "/" + gun._magazineSize;
+        lifeText.text = playerController.life + "/" + PlayerController.MaxLife;
         _nbZombieInScene = GetZombieCountInScene();
         if (_zombieSpawnedThisRound < _zombieNumber)
         {

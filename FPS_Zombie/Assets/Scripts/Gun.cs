@@ -16,6 +16,12 @@ public class Gun : MonoBehaviour
     public bool _canShoot;
     // public int magazine_capacity;
     // public int magazine_;
+    [SerializeField] private AudioClip shootSound; //piou
+    [SerializeField] private AudioClip emptyMagSound; //clic
+    
+    private AudioSource _audioSourceClic;
+    private AudioSource _audioSourcePiou;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -24,6 +30,7 @@ public class Gun : MonoBehaviour
         _bulletLeft = _magazineSize;
         _reloadCooldown = 1.5f;
         _canShoot = true;
+        _audioSourcePiou = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -33,6 +40,7 @@ public class Gun : MonoBehaviour
         {
             _canShoot=false;
             _reloadTimer = _reloadCooldown;
+            
         }
         if (_canShoot == false)
         {
@@ -54,6 +62,8 @@ public class Gun : MonoBehaviour
                 // Debug.Log("coucou");
                 if (CurrentCooldown <= 0f)
                 {
+                    _audioSourcePiou.clip = shootSound;
+                    _audioSourcePiou.Play();
                     OnGunShoot?.Invoke();
                     _bulletLeft-=1;
                     CurrentCooldown = FireCooldown;
@@ -66,6 +76,8 @@ public class Gun : MonoBehaviour
             {
                 if (CurrentCooldown <= 0f)
                 {
+                    _audioSourcePiou.clip = shootSound;
+                    _audioSourcePiou.Play();
                     OnGunShoot?.Invoke();
                     _bulletLeft-=1;
                     CurrentCooldown = FireCooldown;
@@ -75,4 +87,5 @@ public class Gun : MonoBehaviour
 
         CurrentCooldown -= Time.deltaTime;
     }
+    
 }

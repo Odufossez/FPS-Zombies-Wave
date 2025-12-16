@@ -32,7 +32,8 @@ public class SpeedBooster : MonoBehaviour
         Debug.Log("Initial Reload Speed: " + _initialReloadSpeed);
         //Debug.Log("Initial Speed: " + _initialSpeed);
         playerMovement.moveSpeed = _boostSpeed*_initialSpeed;
-        gun._reloadCooldown = _boostSpeed*_initialReloadSpeed;
+        gun._reloadCooldown = _boostSpeed/_initialReloadSpeed;
+        Debug.Log("New reload speed : " + gun._reloadCooldown);
         //Debug.Log("Boost Speed: " + playerMovement.moveSpeed);
         _isBoosting = true;
         _boostTimer = 0;

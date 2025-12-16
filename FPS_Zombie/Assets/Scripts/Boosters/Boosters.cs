@@ -14,8 +14,6 @@ public class Boosters : MonoBehaviour
             string boosterTag = gameObject.tag;
             Destroy(gameObject);
             bc.OnBoosterCollected(boosterTag); //passe le tag du booster au script de la collection
-        } else {
-            Debug.Log("BoosterCollection not found");
-        }
+        } 
     }
 }
