@@ -5,13 +5,19 @@ public class NukeBooster : MonoBehaviour
     private PlayerController _playerController;
     private GameObject _zombie;
     private bool _isCollected = false;
+    [SerializeField] private AudioClip _clip;
+    private AudioSource _audioSource;
+    
 
     public int nbZombie;
     public void OnCollected()
     {
         _playerController = gameObject.GetComponent<PlayerController>();
+        _audioSource = gameObject.GetComponent<AudioSource>();
         _isCollected = true;
         nbZombie = 0;
+        _audioSource.clip = _clip;
+        _audioSource.Play();
     }
 
     public void Update()

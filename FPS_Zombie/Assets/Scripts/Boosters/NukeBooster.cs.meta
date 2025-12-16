@@ -1,6 +1,12 @@
 fileFormatVersion: 2
-<<<<<<< Updated upstream
 guid: b5ebb4181c38c4fd9856b5d4eee9f497
-=======
-guid: 9379c10a8b26e1c4fa3c8a777907018e
->>>>>>> Stashed changes
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _clip: {fileID: 8300000, guid: 93eb417d6c2ba2c4387cedb23d6740ef, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
