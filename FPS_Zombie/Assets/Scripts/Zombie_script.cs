@@ -12,7 +12,7 @@ public class Zombie_script : MonoBehaviour
 
     public GameObject target;
     
-    private AudioSource audioSourceNoot;
+   // private AudioSource audioSourceNoot;
    [SerializeField] private AudioClip clipNoot;
 
     public  UnityEngine.AI.NavMeshAgent agent;
@@ -24,7 +24,6 @@ public class Zombie_script : MonoBehaviour
         if(_playerController == null) Debug.LogError("PlayerController not found");
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         target = GameObject.FindGameObjectWithTag("Player");
-        audioSourceNoot = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame

@@ -5,6 +5,7 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - target: {fileID: 2960779635809304286, guid: 0c6b3542370b7024cb364ca5b3373a83, type: 3}
+  - clipNoot: {fileID: 8300000, guid: da9a011d3e722614a9be69c7cb47495c, type: 3}
   - agent: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
