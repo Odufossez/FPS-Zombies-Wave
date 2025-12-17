@@ -21,6 +21,9 @@ public class WaveController : MonoBehaviour
     public GameObject zombiePrefab;
     public PlayerController playerController;
     public Gun gun;
+    
+    public ShopManager shopManager;
+    private bool _isShopOpen = false;
 
     private float _spawnTimer;
 
@@ -32,11 +35,13 @@ public class WaveController : MonoBehaviour
         _zombieNumber = 5;
         _zombieSpawnedThisRound = 0;
         _spawnTimer = 0f;
+        _isShopOpen = false;
         // _zombie = GameObject.FindFirstObjectByType<Zombie_basique>();
     }
 
     void Update()
     {
+        if (_isShopOpen) return;
         // Debug.Log(_nbZombieInScene);
         waveText.text = "Manche : " + _waveNumber;
         bullets.text = gun._bulletLeft + "/" + gun._magazineSize;
@@ -54,15 +59,7 @@ public class WaveController : MonoBehaviour
                 _spawnTimer = _spawnCooldown;
             }
         } else if(_nbZombieInScene==0) {  // on passe à la vague suivante
-            _waveNumber+=1;
-            if(_spawnCooldown>0.1f){
-                _spawnCooldown=_spawnCooldown*0.75f;
-            }
-            _zombieSpawnedThisRound=0;
-            _zombieNumber=_zombieNumber*2;
-            _zombieSpeed = _zombieSpeed*1.25f;
-            _zombie.damage=_zombie.damage*2;
-            _zombie.life=_zombie.life*2;
+            OpenShopPhase();
         }
         _spawnTimer -= Time.deltaTime;
     }
@@ -70,5 +67,32 @@ public class WaveController : MonoBehaviour
     int GetZombieCountInScene()
     {
         return GameObject.FindGameObjectsWithTag("Zombie").Length;
+    }
+    
+    void OpenShopPhase()
+    {
+        _isShopOpen = true;
+        shopManager.OpenShop();
+    }
+    
+    public void StartNextWave()
+    {
+        _isShopOpen = false;
+        
+        // La logique de difficulté qui était dans Update est déplacée ici
+        _waveNumber+=1;
+        
+        if(_spawnCooldown>0.1f){
+            _spawnCooldown=_spawnCooldown*0.75f;
+        }
+        _zombieSpawnedThisRound=0;
+        _zombieNumber=_zombieNumber*2;
+        _zombieSpeed = _zombieSpeed*1.25f;
+        
+        if (_zombie != null) 
+        {
+            _zombie.damage = _zombie.damage * 2;
+            _zombie.life = _zombie.life * 2;
+        }
     }
 }
