@@ -62,6 +62,7 @@ public class ShopManager : MonoBehaviour
     public void CloseAndStartWave()
     {
         shopCanvas.SetActive(false);
+        hudCanvas.SetActive(true);
         
         // On relance le temps
         Time.timeScale = 1f;
@@ -131,11 +132,23 @@ public class ShopManager : MonoBehaviour
     
     void UpdateUI()
     {
-        if(moneyText != null) moneyText.text = "Argent : " + pap._moneyAmount + "$";
+        if (pap == null)
+        {
+            Debug.Log("[ShopManager] Référence 'pap' non assignée : impossible de mettre à jour l'UI.");
+            return;
+        }
 
-        UpdateButtonUI(damagePriceText, damageLevelText, damageBasePrice, _damageLevel);
-        UpdateButtonUI(reloadSpeedLevelText, reloadSpeedLevelText, reloadSpeedBasePrice, _reloadSpeedLevel);
-        UpdateButtonUI(ammoPriceText, ammoLevelText, ammoBasePrice, _ammoLevel);
+        if (moneyText != null)
+            moneyText.text = "Argent : " + pap._moneyAmount + "$";
+
+        if (damagePriceText != null && damageLevelText != null)
+            UpdateButtonUI(damagePriceText, damageLevelText, damageBasePrice, _damageLevel);
+
+        if (reloadSpeedPriceText != null && reloadSpeedLevelText != null)
+            UpdateButtonUI(reloadSpeedPriceText, reloadSpeedLevelText, reloadSpeedBasePrice, _reloadSpeedLevel);
+
+        if (ammoPriceText != null && ammoLevelText != null)
+            UpdateButtonUI(ammoPriceText, ammoLevelText, ammoBasePrice, _ammoLevel);
     }
     
     void UpdateButtonUI(TMP_Text priceText, TMP_Text levelText, int basePrice, int level)

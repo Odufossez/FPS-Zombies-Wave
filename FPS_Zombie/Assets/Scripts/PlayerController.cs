@@ -5,7 +5,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField]
     private float _speed = 3.0f;
-    private float rotationSpeed = 2.0f;
+    //private float rotationSpeed = 2.0f;
     private Rigidbody _rigidbody;
     public int zombiesKilled;
     public GameObject gameOverPanel;
@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     public GameOverScript gameOverScript;
 
     public float life;
-    public const float MaxLife = 100;
+    public const float MaxLife = 50;
 
     private PlayerInputController _playerInputController;
 

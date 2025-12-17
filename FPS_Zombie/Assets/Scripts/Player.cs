@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 public class Player : MonoBehaviour
 {
     [SerializeField]
-    private float rotationSpeed = 2f;
+    //private float rotationSpeed = 2f;
     public float speed = 2;
     //public float _speed = 2;
 

@@ -11,6 +11,14 @@ public class Zombie_script : MonoBehaviour
     public float damage = 1;
 
     public GameObject target;
+    public WaveController waveController;
+    
+    [Header("Zombie Stats")]
+    public float baseMovementSpeed = 2.5f; // Vitesse de base propre à CE type de zombie
+    public float baseLife = 100f; // Exemple : vie de base
+    public float baseDamage = 10f;
+    public float currentLife;
+    public float currentDamage;
     
    // private AudioSource audioSourceNoot;
    [SerializeField] private AudioClip clipNoot;
@@ -20,6 +28,7 @@ public class Zombie_script : MonoBehaviour
     void Start()
     {
         _PaP = GameObject.FindFirstObjectByType<PaP>();
+        waveController = GameObject.FindFirstObjectByType<WaveController>();
         count = 0;
         _playerController = GameObject.FindFirstObjectByType(typeof(PlayerController)) as PlayerController;
         if(_playerController == null) Debug.LogError("PlayerController not found");
@@ -36,7 +45,7 @@ public class Zombie_script : MonoBehaviour
         if (life <= 0f)
         {
             _playerController.zombiesKilled++;
-            _PaP._moneyAmount +=90;
+            _PaP._moneyAmount = _PaP._moneyAmount+(10*waveController._waveNumber);
             AudioSource.PlayClipAtPoint(clipNoot, transform.position);
             Destroy(gameObject);
         }

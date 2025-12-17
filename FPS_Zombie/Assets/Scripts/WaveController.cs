@@ -12,15 +12,22 @@ public class WaveController : MonoBehaviour
     private float _zombieLife;
     private float _spawnCooldown;
     private int _nbZombieInScene;
-    public Zombie_script _zombie;
+    
+    private float _zombieSpeedMultiplier; // Devient un multiplicateur de vitesse de vague
+    private float _zombieLifeMultiplier; // Multiplicateur pour la vie
+    private float _zombieDamageMultiplier; // Multiplicateur pour les dégâts
+    //public Zombie_script _zombie;
     public TMP_Text waveText;
     public TMP_Text bullets;
     public TMP_Text lifeText;
 
     [Header("Prefab du zombie à instancier")]
     public GameObject zombiePrefab;
+	public GameObject zombieRusher;
     public PlayerController playerController;
     public Gun gun;
+	public GameObject[] zombies;
+    
     
     public ShopManager shopManager;
     private bool _isShopOpen = false;
@@ -29,10 +36,12 @@ public class WaveController : MonoBehaviour
 
     void Start()
     {
-        _zombieSpeed = 2f;
+        _zombieSpeedMultiplier = 1.0f; // Initialise le multiplicateur à 1 (pas de modification de vitesse au début)
+        _zombieLifeMultiplier = 1.0f;
+        _zombieDamageMultiplier = 1.0f;
         _waveNumber = 1;
-        _spawnCooldown = 2.5f;
-        _zombieNumber = 5;
+        _spawnCooldown = 1.5f;
+        _zombieNumber = 7;
         _zombieSpawnedThisRound = 0;
         _spawnTimer = 0f;
         _isShopOpen = false;
@@ -51,10 +60,31 @@ public class WaveController : MonoBehaviour
         {
             if (_spawnTimer <= 0f)
             {
-                Vector3 spawnPosition = new Vector3(0, 5, 0);
-                GameObject zombie = Instantiate(zombiePrefab, spawnPosition, Quaternion.identity);
+                Vector3 spawnPosition = new Vector3(Random.Range(-47, 47), 1, Random.Range(-47, 47));
+                GameObject zombie;
+                if(_waveNumber>=2){
+			        zombie = Instantiate(zombies[Random.Range(0, zombies.Length)], spawnPosition, Quaternion.identity);
+				}
+                else
+                {
+                    zombie = Instantiate(zombiePrefab, spawnPosition, Quaternion.identity);
+                }
                 NavMeshAgent agent = zombie.GetComponent<NavMeshAgent>();
-                agent.speed = _zombieSpeed;
+                Zombie_script zombieComponent = zombie.GetComponent<Zombie_script>();
+                
+                if (zombieComponent != null)
+                {
+                    // Applique le multiplicateur de vague à la vitesse de base du zombie
+                    agent.speed = zombieComponent.baseMovementSpeed * _zombieSpeedMultiplier;
+                    // Applique les multiplicateurs de vague à la vie et aux dégâts
+                    zombieComponent.currentLife = zombieComponent.baseLife * _zombieLifeMultiplier;
+                    zombieComponent.currentDamage = zombieComponent.baseDamage * _zombieDamageMultiplier;
+                }
+                else
+                {
+                    Debug.LogWarning("Zombie spawned without Zombie_script component. Speed set to default * wave multiplier.");
+                    agent.speed = 2.5f * _zombieSpeedMultiplier; // Fallback pour les zombies sans Zombie_script
+                }
                 _zombieSpawnedThisRound++;
                 _spawnTimer = _spawnCooldown;
             }
@@ -87,12 +117,14 @@ public class WaveController : MonoBehaviour
         }
         _zombieSpawnedThisRound=0;
         _zombieNumber=_zombieNumber*2;
-        _zombieSpeed = _zombieSpeed*1.25f;
-        
+        _zombieSpeedMultiplier *= 1.25f; // Le multiplicateur de vitesse augmente avec la vague
+        _zombieLifeMultiplier *= 1.5f; // La vie pourrait augmenter plus vite, par exemple
+        _zombieDamageMultiplier *= 1.2f; // Les dégâts aussi !
+        /*
         if (_zombie != null) 
         {
             _zombie.damage = _zombie.damage * 2;
             _zombie.life = _zombie.life * 2;
-        }
+        }*/
     }
 }

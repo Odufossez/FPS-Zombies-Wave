@@ -68,7 +68,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8086fc91056b3484885cd5066e6b7a0b, type: 2}
+  - {fileID: 2100000, guid: f686bc5612a4027d5b0c24ccd08a4ae0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -123,9 +123,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61d01409102574481b088450d6694dc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _PaP: {fileID: 0}
   life: 100
   damage: 1
   target: {fileID: 2466927844373035144, guid: ec2cc9c7714775449aef5a07283a3e5c, type: 3}
+  waveController: {fileID: 0}
+  baseMovementSpeed: 2.5
+  baseLife: 100
+  baseDamage: 10
+  currentLife: 0
+  currentDamage: 0
   clipNoot: {fileID: 8300000, guid: da9a011d3e722614a9be69c7cb47495c, type: 3}
   agent: {fileID: 2518844035091157104}
 --- !u!195 &2518844035091157104
@@ -138,7 +145,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 2
+  m_Speed: 2.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
